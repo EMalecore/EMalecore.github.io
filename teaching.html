@@ -1,0 +1,193 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eva Malecore — Ecology</title>
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 2rem auto;
+  max-width: 900px;
+  line-height: 1.6;
+  padding: 0 1rem;
+  color: #1b1b1b;
+  text-align: justify;
+}
+h1, h2, nav, footer { text-align: left; }
+h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+nav a { margin-right: 1rem; text-decoration: none; color: #0b63e5; }
+nav a:hover { text-decoration: underline; }
+footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem; }
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Lightbox overlay */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+.lightbox-nav {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+.caption {
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+#lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Eva Malecore</h1>
+  <p>Postdoctoral Researcher in Ecology.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="diversity.html">Diversity and Equity</a>
+    <a href="miscellanea.html">Miscellanea</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+  <main>
+    <h2>Teaching</h2>
+
+    <div class="project">
+      <h3>Next up: ...</h3>
+      <p>
+        ...
+      </p>
+      <div class="gallery">
+        <div>
+          <img src="images/project1.jpg" alt="...">
+          <div class="caption">...</div>
+        </div>
+    </div>
+
+    <div class="project">
+      <h3>PACE seminar</h3>
+      <p>
+        ...
+      </p>
+      <div class="gallery">
+        <div>
+          <img src="images/project3.jpg" alt="...">
+          <div class="caption">...</div>
+        </div>
+      </div>
+    </div>
+
+  <div class="project">
+      <h3>Statistics</h3>
+      <p>
+        ...
+      </p>
+      <div class="gallery">
+        <div>
+          <img src="images/project3.jpg" alt="...">
+          <div class="caption">...</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>
+      Contact: <a href="mailto:eva.malecore@unibe.ch">eva.malecore@unibe.ch</a> · 
+      <a href="https://github.com/EMalecore">GitHub</a>
+    </p>
+  </footer>
+  
+<script>
+const images = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+let currentIndex = 0;
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    currentIndex = parseInt(img.dataset.index);
+    openLightbox();
+  });
+});
+
+function openLightbox() {
+  lightbox.style.display = 'flex';
+  updateLightbox();
+}
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+
+function updateLightbox() {
+  const img = images[currentIndex];
+  lightboxImg.src = img.src;
+  lightboxCaption.textContent = img.alt;
+}
+
+document.getElementById('prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateLightbox();
+});
+
+document.getElementById('next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateLightbox();
+});
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+</script>
+
+</body>
+</html>
