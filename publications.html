@@ -19,62 +19,11 @@ h1 { font-size: 2rem; margin-bottom: 0.5rem; }
 footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem; }
 .project { margin-bottom: 2rem; }
 
-/* Gallery grid */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.gallery img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-/* Lightbox overlay */
-#lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 8px;
-}
-.lightbox-nav {
-  margin-top: 1rem;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  justify-content: space-between;
-  width: 150px;
-}
-.caption {
-  font-size: 0.9rem;
-  color: #fff;
-  text-align: center;
-  margin-top: 0.5rem;
-}
-#lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
+/* Hanging indent for references */
+.ref {
+  margin: 0 0 1rem 0;
+  padding-left: 2.5em;
+  text-indent: -2.5em;
 }
 
 /* Header */
@@ -90,6 +39,27 @@ header {
 nav { display: flex; flex-wrap: wrap; gap: 1rem; }
 nav a { color: white; text-decoration: none; }
 nav a:hover { text-decoration: underline; }
+
+/* Optional gallery/lightbox styles kept if needed */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+#lightbox { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; flex-direction: column; }
+#lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
+.lightbox-nav { margin-top: 1rem; color: #fff; font-size: 2rem; cursor: pointer; user-select: none; display: flex; justify-content: space-between; width: 150px; }
+.caption { font-size: 0.9rem; color: #fff; text-align: center; margin-top: 0.5rem; }
+#lightbox-close { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: #fff; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -114,49 +84,38 @@ nav a:hover { text-decoration: underline; }
 <main>
 <h2>Publications</h2>
 <div class="project">
+
 <h3>Submitted</h3>
-<p>8. <span style="display: inline-block; margin-left: 1rem;">
-    2025<br>
-    Magnin O, Malecore E: Konzept Ex-situ-Massnahmen Flora Schweiz<br>
-    Publisher: Swiss Federal Office of the Environment and Swiss Federal Office of Agriculture
-  </span></p>
-
-<p>6. <span style="display: inline-block; margin-left: 1rem;">
-    2025<br>
-    Malecore E, Gottsponer C, Fischer M: Potential for Ex-situ Cultures and Conservation Introductions of the Tiny Mousetail (Myosurus minimus)<br>
-    doi:
-  </span></p>
-
-<p>5. <span style="display: inline-block; margin-left: 1rem;">
-    2025<br>
-    Kjelsberg N, Mihoub J.B., Malecore E, Coutinho Soares F, Sarrazin F, Fischer M: Towards a common framework for assessing the success of plant-conservation translocations using coherent demographic criteria<br>
-    doi:
-  </span></p>
+<p class="ref">8. 2025<br>
+Magnin O, Malecore E: Konzept Ex-situ-Massnahmen Flora Schweiz<br>
+Publisher: Swiss Federal Office of the Environment and Swiss Federal Office of Agriculture
+</p>
+<p class="ref">6. 2025<br>
+Malecore E, Gottsponer C, Fischer M: Potential for Ex-situ Cultures and Conservation Introductions of the Tiny Mousetail (Myosurus minimus)<br>
+doi:
+</p>
+<p class="ref">5. 2025<br>
+Kjelsberg N, Mihoub J.B., Malecore E, Coutinho Soares F, Sarrazin F, Fischer M: Towards a common framework for assessing the success of plant-conservation translocations using coherent demographic criteria<br>
+doi:
+</p>
 
 <h3>Published</h3>
-<p>4. <span style="display: inline-block; margin-left: 1rem;">
-    2024 Ecology and Evolution<br>
-    Malecore E, Fischer M: Pollen interference between rare and common species<br>
-    doi: 10.1002/ece3.70505
-  </span></p>
-
-<p>3. <span style="display: inline-block; margin-left: 1rem;">
-    2021 Perspectives in Plant Ecology, Evolution and Systematics<br>
-    Malecore E, Berthelot S, van Kleunen M, Razanajatovo M: Reciprocal heterospecific pollen interference among alien and native species.<br>
-    doi: 10.1016/j.ppees.2021.125610
-  </span></p>
-
-<p>2. <span style="display: inline-block; margin-left: 1rem;">
-    2020 Preprints<br>
-    Malecore E, van Kleunen M: Effect of competition from native on alien species in a multi-trophic setting.<br>
-    doi: 10.20944/preprints201910.0132.v1
-  </span></p>
-
-<p>1. <span style="display: inline-block; margin-left: 1rem;">
-    2018 Journal Of Ecology<br>
-    Malecore E, Dawson W, Kempel A, Müller G, van Kleunen M: Non-linear effects of phylogenetic distance on early-stage establishment of experimentally introduced plants in grassland communities.<br>
-    doi: 10.1111/1365-2745.13059
-  </span></p>
+<p class="ref">4. 2024 Ecology and Evolution<br>
+Malecore E, Fischer M: Pollen interference between rare and common species<br>
+doi: 10.1002/ece3.70505
+</p>
+<p class="ref">3. 2021 Perspectives in Plant Ecology, Evolution and Systematics<br>
+Malecore E, Berthelot S, van Kleunen M, Razanajatovo M: Reciprocal heterospecific pollen interference among alien and native species.<br>
+doi: 10.1016/j.ppees.2021.125610
+</p>
+<p class="ref">2. 2020 Preprints<br>
+Malecore E, van Kleunen M: Effect of competition from native on alien species in a multi-trophic setting.<br>
+doi: 10.20944/preprints201910.0132.v1
+</p>
+<p class="ref">1. 2018 Journal Of Ecology<br>
+Malecore E, Dawson W, Kempel A, Müller G, van Kleunen M: Non-linear effects of phylogenetic distance on early-stage establishment of experimentally introduced plants in grassland communities.<br>
+doi: 10.1111/1365-2745.13059
+</p>
 
 </div>
 
@@ -181,7 +140,7 @@ Contact: <a href="mailto:eva.malecore@unibe.ch">eva.malecore@unibe.ch</a> ·
 </footer>
 
 <script>
-// Lightbox for multiple galleries
+// Lightbox script (kept from your previous version)
 let galleries = document.querySelectorAll('.gallery');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
