@@ -47,29 +47,6 @@
       text-align: center;
       margin-top: 0.3rem;
     }
-
-    /* Lightbox overlay */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding: 1rem;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-    }
-    .lightbox:target {
-      display: flex;
-    }
   </style>
 </head>
 <body>
@@ -97,27 +74,27 @@
     <p>
       During my PhD at the University of Konstanz in Germany, I explored Darwin’s naturalization hypothesis, including different aspects of a plant’s life and multi-trophic interactions. My focus was on how the success of an introduced plant depends on its phylogenetic relatedness to the native community. During my Masters in South Africa I worked in Ndumo Game Reserve and in the Natal Museum in Pietermaritzburg on alien plant removal and its effect on arthropod communities.
     </p>
-    <p>
-      Since June 2020, I am working at the Botanical Garden in Bern on ex-situ plant conservation, addressing the risks and the relevance of different factors for plant performance in ex-situ cultures. The aim is to provide science based guidelines for ex-situ plant conservation. This means I collaborate with relevant actors both within and outside academia, in order to implement the findings of my research.
-    </p>
 
-    <!-- Picture gallery with lightbox -->
+    <!-- Picture gallery -->
     <h2>Fieldwork & Research</h2>
     <div class="gallery">
       <div>
-        <a href="#img1"><img src="images/PMB.jpg" alt="Setting up camera traps in Kwa-Zulu Natal, South Africa"></a>
+        <a href="images/PMB.jpg" target="_blank">
+          <img src="images/PMB.jpg" alt="Setting up camera traps in Kwa-Zulu Natal, South Africa">
+        </a>
         <div class="caption">Setting up camera traps in Kwa-Zulu Natal, South Africa</div>
-        <div class="lightbox" id="img1"><a href="#"><img src="images/PMB.jpg" alt="Setting up camera traps"></a></div>
       </div>
       <div>
-        <a href="#img2"><img src="images/CaveSlovenia.jpg" alt="Exploring caves in Slovenia"></a>
+        <a href="images/CaveSlovenia.jpg" target="_blank">
+          <img src="images/CaveSlovenia.jpg" alt="Exploring caves in Slovenia">
+        </a>
         <div class="caption">Exploring caves in Slovenia</div>
-        <div class="lightbox" id="img2"><a href="#"><img src="images/CaveSlovenia.jpg" alt="Exploring caves"></a></div>
       </div>
       <div>
-        <a href="#img3"><img src="images/TembeElephantPark.jpg" alt="Field work in Tembe Elephant Park, South Africa"></a>
+        <a href="images/TembeElephantPark.jpg" target="_blank">
+          <img src="images/TembeElephantPark.jpg" alt="Field work in Tembe Elephant Park, South Africa">
+        </a>
         <div class="caption">Field work in Tembe Elephant Park, South Africa</div>
-        <div class="lightbox" id="img3"><a href="#"><img src="images/TembeElephantPark.jpg" alt="Field work"></a></div>
       </div>
     </div>
   </main>
