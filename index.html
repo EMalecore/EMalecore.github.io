@@ -1,110 +1,189 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Eva Malecore — Ecology</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin: 2rem auto;
-      max-width: 900px;
-      line-height: 1.6;
-      padding: 0 1rem;
-      color: #1b1b1b;
-      text-align: justify;
-    }
-    h1, h2, nav, footer { text-align: left; }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    nav a { margin-right: 1rem; text-decoration: none; color: #0b63e5; }
-    nav a:hover { text-decoration: underline; }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #eee;
-      padding-top: 1rem;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eva Malecore — Ecology</title>
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 2rem auto;
+  max-width: 900px;
+  line-height: 1.6;
+  padding: 0 1rem;
+  color: #1b1b1b;
+  text-align: justify;
+}
+h1, h2, nav, footer { text-align: left; }
+h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+nav a { margin-right: 1rem; text-decoration: none; color: #0b63e5; }
+nav a:hover { text-decoration: underline; }
+footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem; }
 
-    /* Gallery tile layout */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-    .caption {
-      font-size: 0.9rem;
-      color: #555;
-      text-align: center;
-      margin-top: 0.3rem;
-    }
-  </style>
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Lightbox overlay */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+.lightbox-nav {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+.caption {
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+#lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Eva Malecore</h1>
-    <p>Postdoctoral Researcher in Ecology.</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="diversity.html">Diversity and Equity</a>
-      <a href="miscellanea.html">Miscellanea</a>
-      <a href="publications.html">Publications</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Eva Malecore</h1>
+  <p>Postdoctoral Researcher in Ecology.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="diversity.html">Diversity and Equity</a>
+    <a href="miscellanea.html">Miscellanea</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <h2>Welcome to my personal website!</h2>
+<main>
+<h2>Welcome to my personal website!</h2>
 
-    <p>
-      I am a biologist working on different aspects of plant ecology since my Master studies. My interest broadly includes plant ecology, multi-trophic interactions, alien plant species, pollination biology and conservation ecology.
-    </p>
-    <p>
-      During my PhD at the University of Konstanz in Germany, I explored Darwin’s naturalization hypothesis, including different aspects of a plant’s life and multi-trophic interactions. My focus was on how the success of an introduced plant depends on its phylogenetic relatedness to the native community. During my Masters in South Africa I worked in Ndumo Game Reserve and in the Natal Museum in Pietermaritzburg on alien plant removal and its effect on arthropod communities.
-    </p>
+<p>
+I am a biologist working on different aspects of plant ecology since my Master studies. My interest broadly includes plant ecology, multi-trophic interactions, alien plant species, pollination biology and conservation ecology.
+</p>
+<p>
+During my PhD at the University of Konstanz in Germany, I explored Darwin’s naturalization hypothesis, including different aspects of a plant’s life and multi-trophic interactions. My focus was on how the success of an introduced plant depends on its phylogenetic relatedness to the native community. During my Masters in South Africa I worked in Ndumo Game Reserve and in the Natal Museum in Pietermaritzburg on alien plant removal and its effect on arthropod communities.
+</p>
+<p>
+Since June 2020, I am working at the Botanical Garden in Bern on ex-situ plant conservation, addressing the risks and the relevance of different factors for plant performance in ex-situ cultures. The aim is to provide science based guidelines for ex-situ plant conservation. This means I collaborate with relevant actors both within and outside academia, in order to implement the findings of my research.
+</p>
+<p>
+My current projects include, among others: studying the role of heterospecific pollen interference between common and rare species; a project on ruderal annual species investigating the role of stratification; determining the potential of using green roofs for conservation purposes; a project on the tiny mousetail (Myosurus minimus), a species that currently has only a single population in Switzerland.
+</p>
+<p>
+I also teach statistical analyses with R from time to time and intend to develop a course on advanced statistical analyses for ecologist for doctoral students and postdocs.
+</p>
 
-    <!-- Picture gallery -->
-    <h2>Fieldwork & Research</h2>
-    <div class="gallery">
-      <div>
-        <a href="images/PMB.jpg" target="_blank">
-          <img src="images/PMB.jpg" alt="Setting up camera traps in Kwa-Zulu Natal, South Africa">
-        </a>
-        <div class="caption">Setting up camera traps in Kwa-Zulu Natal, South Africa</div>
-      </div>
-      <div>
-        <a href="images/CaveSlovenia.jpg" target="_blank">
-          <img src="images/CaveSlovenia.jpg" alt="Exploring caves in Slovenia">
-        </a>
-        <div class="caption">Exploring caves in Slovenia</div>
-      </div>
-      <div>
-        <a href="images/TembeElephantPark.jpg" target="_blank">
-          <img src="images/TembeElephantPark.jpg" alt="Field work in Tembe Elephant Park, South Africa">
-        </a>
-        <div class="caption">Field work in Tembe Elephant Park, South Africa</div>
-      </div>
-    </div>
-  </main>
+<h2>Fieldwork & Research</h2>
+<div class="gallery">
+  <img src="images/PMB.jpg" alt="Setting up camera traps in Kwa-Zulu Natal, South Africa" data-index="0">
+  <img src="images/CaveSlovenia.jpg" alt="Exploring caves in Slovenia" data-index="1">
+  <img src="images/TembeElephantPark.jpg" alt="Field work in Tembe Elephant Park, South Africa" data-index="2">
+</div>
 
-  <footer>
-    <p>
-      Contact: <a href="mailto:eva.malecore@unibe.ch">eva.malecore@unibe.ch</a> · 
-      <a href="https://github.com/EMalecore">GitHub</a>
-    </p>
-  </footer>
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="">
+  <div class="caption" id="lightbox-caption"></div>
+  <div class="lightbox-nav">
+    <span id="prev">&#10094;</span>
+    <span id="next">&#10095;</span>
+  </div>
+</div>
+
+</main>
+
+<footer>
+<p>
+Contact: <a href="mailto:eva.malecore@unibe.ch">eva.malecore@unibe.ch</a> · 
+<a href="https://github.com/EMalecore">GitHub</a>
+</p>
+</footer>
+
+<script>
+const images = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+let currentIndex = 0;
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    currentIndex = parseInt(img.dataset.index);
+    openLightbox();
+  });
+});
+
+function openLightbox() {
+  lightbox.style.display = 'flex';
+  updateLightbox();
+}
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+
+function updateLightbox() {
+  const img = images[currentIndex];
+  lightboxImg.src = img.src;
+  lightboxCaption.textContent = img.alt;
+}
+
+document.getElementById('prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateLightbox();
+});
+
+document.getElementById('next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateLightbox();
+});
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+</script>
+
 </body>
 </html>
 
