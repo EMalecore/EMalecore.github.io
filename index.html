@@ -36,6 +36,20 @@
       border-top: 1px solid #eee;
       padding-top: 1rem;
     }
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.gallery img {
+  width: 100%;
+  height: 150px;        /* fixed tile height */
+  object-fit: cover;    /* crop images nicely */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
   </style>
 </head>
 <body>
