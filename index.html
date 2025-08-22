@@ -4,32 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Eva Malecore — Ecology</title>
-  
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 2rem auto;
-      max-width: 700px;
+      max-width: 900px;
       line-height: 1.6;
       padding: 0 1rem;
       color: #1b1b1b;
       text-align: justify;
     }
-    h1,h2,nav,footer {
-    text-align: left;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    nav a {
-      margin-right: 1rem;
-      text-decoration: none;
-      color: #0b63e5;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    h1, h2, nav, footer { text-align: left; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    nav a { margin-right: 1rem; text-decoration: none; color: #0b63e5; }
+    nav a:hover { text-decoration: underline; }
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
@@ -37,28 +25,52 @@
       border-top: 1px solid #eee;
       padding-top: 1rem;
     }
+
+    /* Gallery tile layout */
     .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.gallery img {
-  width: 100%;
-  height: 150px;        /* fixed tile height */
-  object-fit: cover;    /* crop images nicely */
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-.caption {
-  font-size: 0.9rem;
-  color: #555;
-  text-align: center;
-  margin-top: 0.3rem;
-}
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .caption {
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding: 1rem;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
   </style>
-  
 </head>
 <body>
   <header>
@@ -79,7 +91,6 @@
   <main>
     <h2>Welcome to my personal website!</h2>
 
-    <!-- Description of Eva Malecore -->
     <p>
       I am a biologist working on different aspects of plant ecology since my Master studies. My interest broadly includes plant ecology, multi-trophic interactions, alien plant species, pollination biology and conservation ecology.
     </p>
@@ -87,32 +98,28 @@
       During my PhD at the University of Konstanz in Germany, I explored Darwin’s naturalization hypothesis, including different aspects of a plant’s life and multi-trophic interactions. My focus was on how the success of an introduced plant depends on its phylogenetic relatedness to the native community. During my Masters in South Africa I worked in Ndumo Game Reserve and in the Natal Museum in Pietermaritzburg on alien plant removal and its effect on arthropod communities.
     </p>
     <p>
-      Since June 2020, I am working at the Botanical Garden in Bern on ex-situ plant conservation, addressing the risks and the relevance of different factors for plant performance in ex-situ cultures. The aim is to provide science based guidelines for ex-situ plant conservation. This means I collaborate with relevant actors both within and outside academia, in order to implement the findings of my research. Together with InfoFlora and the Botanical Garden of Genève, we organize a biyearly workshop to bring together and update the ex-situ plant conservation community of Switzerland on the most recent findings on the topic. Currently, in collaboration with RegioFlora and on behalf of the BAFU (Federal Office for the Environment) and the BLW (Federal Office for Agriculture) I am contributing to the writing of a concept for ex-situ plant conservation in Switzerland.
+      Since June 2020, I am working at the Botanical Garden in Bern on ex-situ plant conservation, addressing the risks and the relevance of different factors for plant performance in ex-situ cultures. The aim is to provide science based guidelines for ex-situ plant conservation. This means I collaborate with relevant actors both within and outside academia, in order to implement the findings of my research.
     </p>
-    <p>
-      My current projects include, among others: studying the role of heterospecific pollen interference between common and rare species; a project on ruderal annual species investigating the role of stratification; determining the potential of using green roofs for conservation purposes; a project on the tiny mousetail (Myosurus minimus), a species that currently has only a single population in Switzerland.
-    </p>
-    <p>
-      I also teach statistical analyses with R from time to time and intend to develop a course on advanced statistical analyses for ecologist for doctoral students and postdocs.
-    </p>
-    
-       <!-- Picture gallery -->
+
+    <!-- Picture gallery with lightbox -->
     <h2>Fieldwork & Research</h2>
     <div class="gallery">
       <div>
-        <img src="images/PMB.jpg" alt="Setting up camera traps in Kwa-Zulu Natal, South Africa">
+        <a href="#img1"><img src="images/PMB.jpg" alt="Setting up camera traps in Kwa-Zulu Natal, South Africa"></a>
         <div class="caption">Setting up camera traps in Kwa-Zulu Natal, South Africa</div>
+        <div class="lightbox" id="img1"><a href="#"><img src="images/PMB.jpg" alt="Setting up camera traps"></a></div>
       </div>
       <div>
-        <img src="images/CaveSlovenia.jpg" alt="Exploring caves in Slovenia">
+        <a href="#img2"><img src="images/CaveSlovenia.jpg" alt="Exploring caves in Slovenia"></a>
         <div class="caption">Exploring caves in Slovenia</div>
+        <div class="lightbox" id="img2"><a href="#"><img src="images/CaveSlovenia.jpg" alt="Exploring caves"></a></div>
       </div>
       <div>
-        <img src="images/TembeElephantPark.jpg" alt="Field work in Tembe Elephant Park, South Africa">
+        <a href="#img3"><img src="images/TembeElephantPark.jpg" alt="Field work in Tembe Elephant Park, South Africa"></a>
         <div class="caption">Field work in Tembe Elephant Park, South Africa</div>
+        <div class="lightbox" id="img3"><a href="#"><img src="images/TembeElephantPark.jpg" alt="Field work"></a></div>
       </div>
     </div>
-    
   </main>
 
   <footer>
@@ -123,3 +130,4 @@
   </footer>
 </body>
 </html>
+
