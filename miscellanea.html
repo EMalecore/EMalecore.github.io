@@ -20,6 +20,7 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
 .project { margin-bottom: 2rem; }
 
 /* Gallery grid */
+/* Default gallery grid */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -34,6 +35,18 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
   border-radius: 8px;
   border: 1px solid #ccc;
   cursor: pointer;
+}
+/* Single image gallery */
+.gallery:has(img:only-child) {
+  display: flex;
+  justify-content: center;
+}
+.gallery:has(img:only-child) img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 400px; /* adjust as you like */
+  object-fit: contain;
 }
 /*
 .gallery img {
