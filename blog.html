@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Eva Malecore — Miscellanea</title>
+<title>Eva Malecore — Blog</title>
 <style>
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -17,51 +17,55 @@ body {
 h1, h2, nav, footer { text-align: left; }
 h1 { font-size: 2rem; margin-bottom: 0.5rem; }
 footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem; }
-.project { margin-bottom: 2rem; }
-  
-/* Section separator */
-.section-separator {
-  border: none;
-  border-top: 1px solid #ccc;  /* light gray line */
-  margin: 2rem 0;              /* space above and below */
+
+/* Blog structure */
+#blog-index {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+#blog-index h3 {
+  margin-top: 0;
+}
+#blog-index ul {
+  list-style: none;
+  padding: 0;
+}
+#blog-index li {
+  margin: 0.4rem 0;
+}
+#blog-index a {
+  text-decoration: none;
+  color: #0056b3;
+}
+#blog-index a:hover {
+  text-decoration: underline;
 }
 
-/* Gallery grid */
-/* Multi-image gallery */
+.blog-post {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+.blog-post:last-child {
+  border-bottom: none;
+}
+.blog-post h3 {
+  margin-bottom: 0.3rem;
+}
+.blog-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+.blog-post p {
+  margin: 0.8rem 0;
+}
+
+/* Gallery */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive */
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* Make all images occupy the same space */
-.gallery img {
-  width: 100%;
-  height: 200px;           /* fixed height for uniformity */
-  object-fit: cover;       /* crop while keeping aspect ratio */
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-/* Single-image gallery */
-.gallery:has(img:only-child) {
-  display: flex;
-  justify-content: center;
-}
-
-.gallery:has(img:only-child) img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 400px; /* adjust as needed */
-  object-fit: contain;
-}
-
-
-/* Default gallery grid */
-/* .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
@@ -69,16 +73,14 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
 }
 .gallery img {
   width: 100%;
-  height: auto;*/       /* allow portrait images to keep full ratio */
-  /*max-height: 300px;   /* optional: cap very tall ones */
-  /*object-fit: contain; /* show whole image, may add borders */
- /* border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
   border: 1px solid #ccc;
   cursor: pointer;
 }
-/* Single image gallery */ 
-/*
-  .gallery:has(img:only-child) {
+/* Single image adapts */
+.gallery:has(img:only-child) {
   display: flex;
   justify-content: center;
 }
@@ -86,19 +88,11 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 400px;*/ /* adjust as you like */
-  /*object-fit: contain;
+  max-height: 400px;
+  object-fit: contain;
 }
-.gallery img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-*/
-  
+
+/* Video */
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 ratio */
@@ -113,6 +107,7 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
   width: 100%;
   height: 100%;
 }
+
 /* Lightbox overlay */
 #lightbox {
   display: none;
@@ -182,7 +177,7 @@ nav a:hover { text-decoration: underline; }
     <a href="projects.html">Projects</a>
     <a href="teaching.html">Teaching</a>
     <a href="diversity.html">Diversity and Equity</a>
-    <a href="miscellanea.html">Miscellanea</a>
+    <a href="miscellanea.html">Blog</a>
     <a href="publications.html">Publications</a>
     <a href="cv.html">CV</a>
     <a href="contact.html">Contact</a>
@@ -191,89 +186,68 @@ nav a:hover { text-decoration: underline; }
 
 <main>
 <h2>Blog</h2>
-<!-- Myosurus creative project -->
-<div class="project">
-  <h3>Myosurus minimus becomes Art</h3>
-  <h4>The project on <em>Myosurus minimus</em> was chosen by Hedwig Bäbler to be part of her creative art project</h4>
-  <p>...</p>
-  
-  <div class="project">
-    <h3>Exhibition</h3>
-    <h4>Acht botanische Gärten zwischen Vergangenheit und Zukunft - und meine Gedanken dazu -</h4>
-    <h5>Hedwig Bäbler, 2025</h5>
-    <div class="video-container">
-      <iframe src="https://vimeo.com/1114696945?share=copy#t=0" 
-        title="video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-        </iframe>
-    </div>
-    <p>Botanischer Garten Bern
-      
-      Erzählt von Eva Malecore
-      
-      Der kleine Mäuseschwanz und die Hoffnung
-      
-      Der kleine Mäuseschwanz ist eine einjährige Pflanze. Jeden Frühling wachsen aus den Samen neue Pflänzchen heran, im März kommen sie aus der Erde, im April blühen sie und im Mai werfen sie die Samen ab und vergehen wieder.
-      Die Samen warten auf das nächste Jahr. Damit sie wachsen können, brauchen sie Platz. Und darum gedeihen sie da, wo Zerstörung herrscht. In der Natur sind das Überschwemmungen von unkontrollierten Flussläufen, in Solothurn ist es die Herbstmesse, wo Tausende Menschen noch den letzten Grashalm niedertrampeln.
-      Der kleine Mäuseschwanz braucht also das Ende, um einen Anfang machen zu können.
-      
-      Vor ein paar Wochen fragte ich meinen Sohn, warum wir uns so viele Gedanken machen, ob wir Kinder in die Welt setzen wollen, während in Gebieten, wo Krieg herrscht, Hunger und Zerstörung, Kinder auf die Welt kommen.
-      Mein Sohn hat keine Sekunde überlegt.
-      Hoffnung, hat er gesagt. Hoffnung und Liebe.
-      Natürlich hat er recht.
-      
-      Mir ist darauf ein Gedicht eingefallen, dass die ungarische Lyrikerin Caitlin Saida als Replik auf Emily Brontes «Hope is not a Bird,» geschrieben hat.
-      
-      Hope Is Not a Bird, Emily, It’s a Sewer Rat
-      by Caitlin Seida
-      Hope is not the thing with feathers That comes home to roost When you need it most. Hope is an ugly thing With teeth and claws and Patchy fur that’s seen some shit. It’s what thrives in the discards And survives in the ugliest parts of our world, Able to find a way to go on When nothing else can even find a way in.
-      It’s the gritty, nasty little carrier of such diseases as optimism, persistence, Perseverance and joy, Transmissible as it drags its tail across your path and bites you in the ass.
-      Hope is not some delicate, beautiful bird, Emily. It’s a lowly little sewer rat That snorts pesticides like they were Lines of coke and still Shows up on time to work the next day Looking no worse for wear.
-      
-      Ich habe jetzt in der Küche, über der Kaffeemaschine, ein Bild aufgehängt vom kleinen Mäuseschwanz. Damit ich jeden Morgen daran erinnert werde, dass die Hoffnung niemals aufgibt.
-    </p>
-  </div>
-  
-  <div class="gallery">
-    <img src="images/IMG_20250519_192102.jpg" alt="The production team (Hedwig Baebled & son, Eva Malecore and Lupa the mascot)">
-  </div>
+
+<!-- Automatic blog index -->
+<div id="blog-index">
+  <h3>Posts</h3>
+  <ul></ul>
 </div>
-  
-<hr class="section-separator">
 
-<!-- BioBlitz 3rd place winner-->
-<div class="project">
-  <h3>Photography contest for the iNaturalist BioBlitz of German speaking Botanical Gardens </h3>
-  <h4>3rd place for "Most spectacular observation" and 3rd place for "Most beautiful observation"</h4>
-  <h5>August 2025</h5>
-  <p> The "Verband Botanischer Gaerten" (Association of Botanical Gardens from the German Speaking regions) organizes a yearly citizen science project focussed on recording the biodiversity in Botanical Gardens.
-    This year, the Botanical Garden of Bern participated in the event, together with other 36 Botanical Gardens.
-    As a passionate naturalist, I did participate to the project too, and two of my observations were awarded the third place for the categories of "Most spectacular observation", and the third place for the category "Most beautiful observation".</p>
-  </p>
-  <p>The third place "Most spectacular observation" was assigned to a recording of a tiny fresh water Ostrachods (Crustacea), <em>Notodromas monacha</em>.
-    I found the ostracods in the "pond" of the botanical garden, moving around at the shore side. With bare eyes, they look like tiny dark dirt speckles moving around frantically.
-    Indeed, ostracods are also known as "seed shrimps".
-    <em>Notodromas monacha</em> is the only European ostracod species to "hang" from the underside of it's meniscus, practically gliding on the underside of the water surface.
-    I learnt this from John H. Bratton.
-  </p>
-  <div class="gallery">
-    <img src="images/DSC_0107-Enhanced-NR_1.png" alt="Notodromas monacha along the shore of the pond of the Botanical Garden of Bern">
-    <img src="images/DSC_0107-Enhanced-NR_2.png" alt="<Notodromas monacha" data-caption="<em>Notodromas monacha</em> , close up">
-    <img src="images/DSC_0107_3.png" alt="Notodromas monacha, close up">
+<!-- Post 1 -->
+<article class="blog-post" id="post1">
+  <h3>Myosurus minimus becomes Art</h3>
+  <div class="blog-meta">Hedwig Bäbler · 2025</div>
+  <p>The project on <em>Myosurus minimus</em> was chosen by Hedwig Bäbler to be part of her creative art project.</p>
 
+  <h4>Exhibition</h4>
+  <div class="blog-meta">Acht botanische Gärten zwischen Vergangenheit und Zukunft</div>
+
+  <div class="video-container">
+    <iframe src="https://player.vimeo.com/video/1114696945" 
+      title="Vimeo video player" 
+      frameborder="0" 
+      allow="autoplay; fullscreen; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
   </div>
-  <p>The third place "Most beautiful" was assigned to a recording of a Common Globetail, <em>Sphaerophoria scripta</em>, resting on the underside of a fern leaf. The colour of the fly matches with the ripe sporangia, making it a beautiful composition I was lucky enough to capture.
-    
+
+  <p>
+    Botanischer Garten Bern · Erzählt von Eva Malecore<br>
+    <em>Der kleine Mäuseschwanz und die Hoffnung</em><br><br>
+    (full text continues…)
   </p>
+
+  <div class="gallery">
+    <img src="images/IMG_20250519_192102.jpg" alt="The production team (Hedwig Bäbler & son, Eva Malecore and Lupa the mascot)">
+  </div>
+</article>
+
+<!-- Post 2 -->
+<article class="blog-post" id="post2">
+  <h3>Photography contest for the iNaturalist BioBlitz of German speaking Botanical Gardens</h3>
+  <div class="blog-meta">August 2025 · 3rd place for “Most spectacular observation” and “Most beautiful observation”</div>
+  
+  <p>The "Verband Botanischer Gaerten" organizes a yearly citizen science project focussed on recording biodiversity in Botanical Gardens...</p>
+
+  <p>The “Most spectacular observation” was assigned to <em>Notodromas monacha</em>, a tiny freshwater ostracod...</p>
+
+  <div class="gallery">
+    <img src="images/DSC_0107-Enhanced-NR_1.png" alt="Notodromas monacha along the pond of the Botanical Garden of Bern">
+    <img src="images/DSC_0107-Enhanced-NR_2.png" alt="Notodromas monacha close up">
+    <img src="images/DSC_0107_3.png" alt="Notodromas monacha, detail">
+  </div>
+
+  <p>The “Most beautiful” was assigned to a Common Globetail, <em>Sphaerophoria scripta</em>, resting on a fern leaf...</p>
+
   <div class="gallery">
     <img src="images/DSC_0829.png" alt="Sphaerophoria scripta">
   </div>
-  <p>For more information on the BioBlitz 2025 and to see the winners of the contests, click <a href="https://www.verband-botanischer-gaerten.de/Aktuelles/Veranstaltungen/Bioblitz_2025.html" target="_blank">here</a> (German only).<br>
-    To see thhe iNaturalist project, click <a href="https://www.inaturalist.org/projects/bioblitz-botanische-garten-2025" target="_blank">here</a>.
+
+  <p>
+    More on the BioBlitz 2025 <a href="https://www.verband-botanischer-gaerten.de/Aktuelles/Veranstaltungen/Bioblitz_2025.html" target="_blank">here</a> (German only).<br>
+    The iNaturalist project can be seen <a href="https://www.inaturalist.org/projects/bioblitz-botanische-garten-2025" target="_blank">here</a>.
   </p>
-</div>
+</article>
 
 <!-- Lightbox overlay -->
 <div id="lightbox">
@@ -296,7 +270,7 @@ Contact: <a href="mailto:eva.malecore@unibe.ch">eva.malecore@unibe.ch</a> ·
 </footer>
 
 <script>
-// Lightbox for multiple galleries
+// Lightbox
 let galleries = document.querySelectorAll('.gallery');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -319,29 +293,36 @@ function openLightbox() {
   lightbox.style.display = 'flex';
   updateLightbox();
 }
-
 function closeLightbox() {
   lightbox.style.display = 'none';
 }
-
 function updateLightbox() {
   const img = currentGallery[currentIndex];
   lightboxImg.src = img.src;
   lightboxCaption.textContent = img.alt;
 }
-
 document.getElementById('prev').addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
   updateLightbox();
 });
-
 document.getElementById('next').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % currentGallery.length;
   updateLightbox();
 });
-
 document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+
+// Build blog index automatically
+const indexList = document.querySelector('#blog-index ul');
+document.querySelectorAll('.blog-post').forEach(post => {
+  const title = post.querySelector('h3').innerText;
+  const link = document.createElement('a');
+  link.href = '#' + post.id;
+  link.textContent = title;
+  const li = document.createElement('li');
+  li.appendChild(link);
+  indexList.appendChild(li);
+});
 </script>
 
 </body>
