@@ -19,6 +19,21 @@ h1 { font-size: 2rem; margin-bottom: 0.5rem; }
 footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem; }
 .project { margin-bottom: 2rem; }
 
+.experience {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.exp-date {
+  flex: 0 0 150px; /* fixed width column for dates */
+  font-weight: bold;
+}
+
+.exp-details {
+  flex: 1;
+}
+  
 /* Gallery grid */
 .gallery {
   display: grid;
@@ -117,13 +132,14 @@ nav a:hover { text-decoration: underline; }
 <!-- Project 1 -->
 <div class="project">
   <h3>Professional experience</h3>
-  <p>2020 - present <br>
-    Postdoc<br>
-    Universität Bern, Botanical Garden, Bern, Switzerland<br>
-    Ex-situ conservation of rare plant specie
-</p>
-  <h3>Education and trainings</h3>
-  
+  <div class="experience">
+    <div class="exp-date">2020 – present</div>
+    <div class="exp-details">
+      <strong>Postdoc</strong><br>
+      Universität Bern, Botanical Garden, Bern, Switzerland<br>
+      Ex-situ conservation of rare plant species
+    </div>
+  </div>
 </div>
 
 <!-- Lightbox overlay -->
