@@ -34,6 +34,23 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
   border: 1px solid #ccc;
   cursor: pointer;
 }
+  
+/* Single-image gallery, bigger display */
+.gallery.single-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.gallery.single-image img {
+  width: auto;
+  max-width: 100%;   /* fits container */
+  height: auto;
+  max-height: 600px; /* adjust as needed */
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
 
 /* Lightbox overlay */
 #lightbox {
@@ -126,10 +143,10 @@ nav a:hover { text-decoration: underline; }
 
 <div class="project">
   <h3>Current Rainbow map (2025)</h3>
-  <div class="gallery">
+  <div class="gallery single-image">
     <img src="images/2025-rainbow-map.png" alt="Rainbow Map Europe for the year 2025">
   </div>
-  <p> For more information, check out the  <a href="https://ilga.org/ilga-world-maps/" target="_blank">ILGA website</a> </p>
+  <p>For more information, check out the <a href="https://ilga.org/ilga-world-maps/" target="_blank">ILGA website</a></p>
 </div>
 
 <div class="project">
