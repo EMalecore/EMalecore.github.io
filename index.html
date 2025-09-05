@@ -17,9 +17,13 @@ body {
 h1, h2, nav, footer { text-align: left; }
 h1 { font-size: 2rem; margin-bottom: 0.5rem; }
 nav a { margin-right: 1rem; text-decoration: none; color: #0b63e5; }
-nav a:hover { text-decoration: underline; }
+nav a:hover {
+  color: #a3ff99; /* lighter green on hover */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem; }
-
+  
 /* Gallery grid */
 .gallery {
   display: grid;
@@ -84,7 +88,6 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
 <header style="background-color: #004d00; color: white; padding: 1rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
   <!-- Top row: logo + title -->
   <div style="display: flex; align-items: center; gap: 1rem;">
-    <!-- Logo -->
     <img src="images/logo.png" alt="Malecore Ecology logo" style="width: 60px; height: 60px; border-radius: 8px; flex-shrink: 0;">
     <h1 style="margin: 0; font-size: 1.5rem;">Malecore Ecology</h1>
   </div>
