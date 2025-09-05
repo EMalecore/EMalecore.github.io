@@ -111,20 +111,23 @@ nav a:hover { text-decoration: underline; }
 </head>
 <body>
 
-<header>
-  <div class="header-top">
-    <div style="width: 60px; height: 60px; background-color: #333; border-radius: 8px;"></div>
+<header style="background-color: black; color: white; padding: 1rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+  <!-- Top row: logo + title -->
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <img src="images/logo.png" alt="Malecore Ecology logo" style="width: 60px; height: 60px; border-radius: 8px; flex-shrink: 0;">
     <h1 style="margin: 0; font-size: 1.5rem;">Malecore Ecology</h1>
   </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="diversity.html">Diversity and Equity</a>
-    <a href="blog.html">Blog</a>
-    <a href="publications.html">Publications</a>
-    <a href="cv.html">CV</a>
-    <a href="contact.html">Contact</a>
+
+  <!-- Navigation row -->
+  <nav style="display: flex; flex-wrap: wrap; gap: 1rem;">
+    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+    <a href="projects.html" style="color: white; text-decoration: none;">Projects</a>
+    <a href="teaching.html" style="color: white; text-decoration: none;">Teaching</a>
+    <a href="diversity.html" style="color: white; text-decoration: none;">Diversity and Equity</a>
+    <a href="blog.html" style="color: white; text-decoration: none;">Blog</a>
+    <a href="publications.html" style="color: white; text-decoration: none;">Publications</a>
+    <a href="cv.html" style="color: white; text-decoration: none;">CV</a>
+    <a href="contact.html" style="color: white; text-decoration: none;">Contact</a>
   </nav>
 </header>
 
