@@ -35,6 +35,23 @@ footer { margin-top: 3rem; font-size: 0.9rem; color: #666; border-top: 1px solid
   cursor: pointer;
 }
 
+  /* Single-image gallery, bigger display */
+.gallery.single-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.gallery.single-image img {
+  width: auto;
+  max-width: 100%;   /* fits container */
+  height: auto;
+  max-height: 600px; /* adjust as needed */
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
 /* Lightbox overlay */
 #lightbox {
   display: none;
